@@ -1,7 +1,6 @@
 // pages/Contact.js
 import React, { useState } from 'react';
 
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -20,7 +19,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic would go here
+    // Form will be handled by Netlify, but we'll still show success message
     console.log('Form submitted:', formData);
     alert('Thank you for your message! We will get back to you soon.');
     setFormData({
@@ -66,7 +65,16 @@ const Contact = () => {
           </div>
 
           <div className="contact-form-container">
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form 
+              className="contact-form" 
+              onSubmit={handleSubmit}
+              netlify="true"
+              name="contact"
+              data-netlify="true"
+            >
+              {/* Hidden input for Netlify Forms */}
+              <input type="hidden" name="form-name" value="contact" />
+              
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input

@@ -7,7 +7,7 @@ import codingAnimation from "../assets/Coding Slide.json";
 const Home = () => {
   const navigate = useNavigate();
 
-  // Scroll smoothly to "services" section
+
   const scrollToServices = () => {
     const section = document.getElementById("services");
     if (section) {
@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* Hero Section */}
+     
       <section className="hero">
         <div className="container">
           <div className="hero-content">
@@ -27,12 +27,12 @@ const Home = () => {
               and make your brand stand out online.
             </p>
             <div className="hero-buttons">
-              {/* This one still goes to the contact page */}
+            
               <Link to="/contact" className="btn btn-primary">
                 Create Your Website
               </Link>
 
-              {/* This one now scrolls down to the services section */}
+             
               <button onClick={scrollToServices} className="btn btn-secondary">
                 Our Services
               </button>
@@ -46,7 +46,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Preview */}
       <section className="services-preview" id="services">
         <div className="container">
           <h2>Our Services</h2>
@@ -73,7 +72,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+   
       <section className="cta-section">
         <div className="container">
           <h2>Ready to Transform Your Digital Presence?</h2>
