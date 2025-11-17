@@ -748,6 +748,8 @@ body {
   font-size: 16px;
   transition: var(--transition);
   background-color: var(--white);
+  color: #000000 !important; /* Force black text on all devices */
+  -webkit-text-fill-color: #000000 !important; /* For iOS Safari */
 }
 
 .form-group input:focus,
@@ -756,6 +758,8 @@ body {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
 }
 
 .form-group textarea {
@@ -768,6 +772,22 @@ body {
   padding: 15px;
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+/* Fix for autofill background colors in Chrome */
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover, 
+.form-group input:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill,
+.form-group textarea:-webkit-autofill:hover,
+.form-group textarea:-webkit-autofill:focus,
+.form-group select:-webkit-autofill,
+.form-group select:-webkit-autofill:hover,
+.form-group select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000 !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+  color: #000000 !important;
 }
 
 /* Blog Page Styles */
@@ -970,8 +990,6 @@ body {
 
 /* ==================== RESPONSIVE STYLES ==================== */
 
-/* ==================== RESPONSIVE STYLES ==================== */
-
 /* General fix for consistent scaling */
 .container {
   width: 100%;
@@ -1089,6 +1107,15 @@ main {
 
   .newsletter-form {
     align-items: center;
+  }
+
+  /* Mobile-specific input fixes */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    font-size: 16px; /* Prevents zoom on iOS */
   }
 }
 
@@ -1226,5 +1253,3 @@ main {
     padding: 1.5rem;
   }
 }
-
-
