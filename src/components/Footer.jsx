@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 const Footer = () => {
   return (
     <footer className="footer">
@@ -13,8 +12,7 @@ const Footer = () => {
             <p>Your vision, our code – together we create digital experiences that inspire.</p>
             <div className="social-links">
               <a href="https://www.instagram.com/digicraft.1?igsh=dmU4YTg4Z29qNWx6&utm_source=qr" aria-label="Instagram">Instagram</a>
-              <a href="https://wa.me/0778938491" aria-label="Whatssapp">Whatssapp</a>
-              
+              <a href="https://wa.me/212778938491" aria-label="WhatsApp">WhatsApp</a>
             </div>
           </div>
           <div className="footer-section">
